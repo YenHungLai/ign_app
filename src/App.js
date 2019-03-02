@@ -22,7 +22,7 @@ class App extends Component {
 
   async componentDidMount() {
     // get data from API
-    await axios.get('https://ign-apis.herokuapp.com/content', {params: {count: 20}})
+    await axios.get('https://cors-anywhere.herokuapp.com/https://ign-apis.herokuapp.com/content', {params: {count: 20}})
       .then((res) => {
         console.log('contents', res);
         this.setState({content: res})
@@ -32,12 +32,12 @@ class App extends Component {
     const ids = data.map((item) => {
       return item.contentId
     })
-    // console.log(ids);
+    console.log(ids);
 
-    await axios.get('https://ign-apis.herokuapp.com/comments', {params: { ids } })  // object literal
+    await axios.get('https://cors-anywhere.herokuapp.com/https://ign-apis.herokuapp.com/comments', {params: { ids } })  // object literal
       .then(res => {
         console.log(`comments`, res);
-        // this.setState({comments: res})
+        this.setState({comments: res})
       })
       .catch(err => {
         console.log(err);
