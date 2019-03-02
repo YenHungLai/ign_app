@@ -36,7 +36,7 @@ class App extends Component {
     await axios.get('https://ign-apis.herokuapp.com/comments', {params: { ids } })  // object literal
       .then(res => {
         console.log(`comments`, res);
-        this.setState({comments: res})
+        // this.setState({comments: res})
       })
       .catch(err => {
         console.log(err);
@@ -111,10 +111,10 @@ class App extends Component {
       const minutes = Math.floor(duration/60)
       let seconds = duration % 60
       if(seconds < 10) seconds = '0' + seconds
-      console.log(publishTime);
-      console.log(duration);
-      console.log(minutes);
-      console.log(seconds);
+      console.log(publishTime)
+      console.log(duration)
+      console.log(minutes)
+      console.log(seconds)
 
       result.push(
         <div className='flex border border-solid border-t-0 border-l-0 border-r-0 p-3' key={index}>
@@ -154,9 +154,9 @@ class App extends Component {
       const comment = this.state.comments.data.content.filter(item => item.id === dataItem.contentId)
       const publishTime = new Date(dataItem.metadata.publishDate)
       const {duration} = dataItem.metadata
-      console.log(publishTime);
-      console.log(duration);
-      console.log(comment);
+      console.log(publishTime)
+      console.log(duration)
+      console.log(comment)
 
       result.push(
         <div className='flex border border-solid border-t-0 border-l-0 border-r-0 p-3' key={index}>
