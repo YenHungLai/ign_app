@@ -5,6 +5,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import './App.css';
+import './tailwind.css';
 
 class App extends Component {
   constructor() {
@@ -36,7 +37,7 @@ class App extends Component {
     await axios.get('https://ign-apis.herokuapp.com/comments', {params: { ids } })  // object literal
       .then(res => {
         console.log(`comments`, res);
-        this.setState({comments: res})
+        // this.setState({comments: res})
       })
       .catch(err => {
         console.log(err);
@@ -199,24 +200,25 @@ class App extends Component {
       case 'latest':
         tab = this.state.latest
         break;
+      default:
     }
 
     return (
       <div className='container mx-auto'>
-        <h1 className='mb-2 text-5xl border border-solid border-t-0 border-l-0 border-r-0'>Latest News</h1>
+        <h1 className='heading'>Latest News</h1>
         <div className='flex flex-row'>
-          <div className='flex flex-col flex-no-shrink w-1/4 mt-2'>
-            <button className='btn p-2 m-1 text-left text-grey-dark text-3xl hover:bg-grey focus:bg-red-dark focus:text-white focus:outline-none'
+          <div className='tabs-group'>
+            <button className='btn tabs'
               onClick={this.handleClick} value='latest'>
               <i class="fas fa-check-circle text-grey"></i><span>&nbsp;&nbsp;&nbsp;</span>
               Latest</button>
 
-            <button className='btn p-2 m-1 text-left text-grey-dark text-3xl hover:bg-grey focus:bg-red-dark focus:text-white focus:outline-none'
+            <button className='btn tabs'
               onClick={this.handleClick} value='videos'>
               <i class="fas fa-play text-grey"></i><span>&nbsp;&nbsp;&nbsp;</span>
               Videos</button>
 
-            <button className='btn p-2 m-1 text-left text-grey-dark text-3xl hover:bg-grey focus:bg-red-dark focus:text-white focus:outline-none'
+            <button className='btn tabs'
               onClick={this.handleClick} value='article'>
               <i class="fas fa-file-alt text-grey"></i><span>&nbsp;&nbsp;&nbsp;</span>
               Article</button>

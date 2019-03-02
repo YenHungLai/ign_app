@@ -1,11 +1,13 @@
-img {
-
-}
-
 img:hover {
   opacity: 0.5;
 }
 
-.container1 {
+button {
+  min-width: 192px;
+}
 
+@media screen and (min-width: 492px) {
+  body {
+
+  }
 }
