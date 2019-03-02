@@ -206,7 +206,7 @@ class App extends Component {
     return (
       <div className='container mx-auto'>
         <h1 className='heading'>Latest News</h1>
-        <div className='flex flex-row'>
+        <div className='flex lg:flex-row flex-col'>
           <div className='tabs-group'>
             <button className='btn tabs'
               onClick={this.handleClick} value='latest'>
