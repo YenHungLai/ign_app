@@ -1,6 +1,5 @@
 // TODO:
-//  time created
-//  latest posts
+//  latest posts, what goes on there???
 //  Use async and await if have time
 // tailwind build ./src/tailwind.src.css -c ./tailwind.js -o .src/tailwind.css
 

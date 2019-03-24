@@ -17,9 +17,17 @@ const Articles = (props) => {
 
   articles.forEach((article, index) => {
     const comment = comments.data.content.filter((item) => item.id === article.contentId);
+    // Time stamp
     const publishTime = new Date(article.metadata.publishDate);
-    console.log(publishTime);
-    console.log(comment);
+    const year = publishTime.getFullYear();
+    const date = publishTime.getDate();
+    const month = publishTime.getMonth() + 1;
+    let hours = publishTime.getHours();
+    let minutes = publishTime.getMinutes();
+    console.log(date);
+    console.log(month);
+    hours = ('0' + hours).slice(-2);
+    minutes = ('0' + minutes).slice(-2);
 
     // Get 1 image
     result.push(
@@ -28,7 +36,7 @@ const Articles = (props) => {
 
           <div className='flex flex-col ml-5'>
             <div className='text-red font-bold'>
-              <label>{publishTime.getDate()}th, {publishTime.getHours()}:{publishTime.getMinutes()}</label>
+              <label>{hours}:{minutes} {month}/{date}/{year}</label>
               <span className='fa-stack fa-1x'>
                 <i className="fas fa-comment text-red fa-stack-1x"></i>
                 <i className="fas fa-comment text-white fa-stack-1x fa-xs"></i>
@@ -39,10 +47,6 @@ const Articles = (props) => {
           </div>
         </div>
     );
-    // each article has 3 images
-    // article.thumbnails.forEach((item, index) => {
-    //   art_images.push(<img src={item.url} alt='not found' key={index}/>)
-    // })
   });
 
   return (
