@@ -6,11 +6,9 @@ const Videos = (props) => {
   const {data: {data}} = props.content;
   // console.log(data);
   const comments = props.comments;
-  console.log(props.comments);
 
   // Filter out videos
   const videos = data.filter((item) => item.contentType === 'video');
-  // console.log(`video`, videos);
 
   const result = [];
   videos.forEach((video, index) => {

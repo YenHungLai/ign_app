@@ -1,8 +1,3 @@
-// TODO:
-//  latest posts, what goes on there???
-//  Use async and await if have time
-// tailwind build ./src/tailwind.src.css -c ./tailwind.js -o .src/tailwind.css
-
 import React, { Component } from 'react';
 import axios from 'axios'
 import './App.css';

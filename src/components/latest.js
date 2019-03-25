@@ -6,7 +6,6 @@ const Latest = (props) => {
   const {data: {data}} = props.content;
   // console.log(data);
   const comments = props.comments;
-  console.log(props.comments);
 
   const result = [];
   data.forEach((dataItem, index) => {

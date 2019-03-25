@@ -6,7 +6,7 @@ const Articles = (props) => {
   const {data: {data}} = props.content;
   // console.log(data);
   const comments = props.comments;
-  console.log(props.comments);
+
   // Filter out articles
   const articles = data.filter((item) => item.contentType === 'article');
   // articles = articles.sort((a, b) => {return a.metadata.publishDate - b.metadata.publishDate})
